@@ -1,18 +1,12 @@
-// Header
-var formattedName = HTMLheaderName.replace("%data%", "Imran Khan");
-var formattedRole = HTMLheaderRole.replace("%data%", "Front-End Web Developer");
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-
 // Bio info
 var bio = { 
 	name : "Imran Khan",
 	role : "Front-end Developer",
 	contacts : {
-		phone : 0031637336418,
+		phone : "+31637336418",
 		mail : "m_imran_khan@me.com",
 		github : "https://github.com/ImranK1506",
-		location : "Amsterdam"
+		location : "Amsterdam, The Netherlands"
 	},
 	welcome : "Welcome, have a look at my resumé!",
 	bioPic : "images/cvpic.png",
@@ -20,6 +14,8 @@ var bio = {
 };
 
 // Display bio
+var name = bio.name;
+var role = bio.role;
 var bioPic = bio.bioPic;
 var welcomeMessage = bio.welcome;
 var contactInfoPhone = bio.contacts.phone;
@@ -27,6 +23,8 @@ var contactInfoMail = bio.contacts.mail;
 var contactInfoGithub = bio.contacts.github;
 var contactInfoLocation = bio.contacts.location;
 
+formattedName = HTMLheaderName.replace("%data%", bio.name);
+formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 formattedBioPic = HTMLbioPic.replace("%data%", bioPic);
 formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", welcomeMessage);
 formattedContactInfoPhone = HTMLmobile.replace("%data%", contactInfoPhone);
@@ -34,11 +32,15 @@ formattedContactInfoMail = HTMLemail.replace("%data%", contactInfoMail);
 formattedContactInfiGithub = HTMLgithub.replace("%data%", contactInfoGithub);
 formattedContactLocation = HTMLlocation.replace("%data%", contactInfoLocation);
 
+$("#header").prepend(formattedRole);
+$("#header").prepend(formattedName);
 $(".flex-box").append(formattedContactInfoPhone, formattedContactInfoMail, formattedContactInfiGithub, formattedContactLocation);
 $("#header").append(formattedBioPic, formattedWelcomeMessage);
 
-// Work info
+// Education info
 
+
+// Work info
 var work = {
 	jobs : [
 	{
@@ -62,6 +64,13 @@ var work = {
 		location : "Amsterdam",
 		dates : "2009-2011",
 		description : ["Deputy manager of service", "Resolving incident and issues concerning fixed services", "Lead escalation during major incidents"]
-	},
+	}
 	]
-}
+};
+
+// Display work
+$("#workExperience").append(HTMLworkStart);
+
+var workEmployer = work.jobs.employer;
+formattedEmployer = HTMLworkEmployer.replace("%data%", workEmployer);
+$(".work-entry").append(formattedEmployer);
