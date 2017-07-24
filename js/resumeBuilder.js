@@ -38,7 +38,57 @@ $(".flex-box").append(formattedContactInfoPhone, formattedContactInfoMail, forma
 $("#header").append(formattedBioPic, formattedWelcomeMessage);
 
 // Education info
+var education = {
+	schools : [
+	{
+		school : "Hogeschool INHolland",
+		major : "Communication Science",
+		degree : " ",
+		location : "Diemen",
+		dates : "2007-2009",
+		url : "https://www.inholland.nl/"
+	},
+	{
+		school : "Hogeschool van Amsterdam",
+		major : "Commputer Science",
+		degree : " ",
+		location : "Amsterdam",
+		dates : "2005-2006",
+		url : "http://www.hva.nl/"
+	}
+	],
+	courses : [
+	{
+		 title : "Front-End Web Development Nanodegree",
+		 school : "Udacity",
+		 dates : "03/2017-present",
+		 url : "http://www.udacity.com"
+	},
+	{
+		 title : "Web Development 101",
+		 school : "The New York Code and Design Academy",
+		 dates : "04/2016-08/2016",
+		 url : "https://nycda.com/"
+	}]
+}
 
+// Display schools
+function bundleEducation() {
+	for (school in education.schools) {
+
+		$("#education").append(HTMLschoolStart);
+		formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].school);
+		formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+		formattedSchoolDate = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+		formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+		formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+	
+		formattedSchoolTitle = formattedSchoolName + formattedSchoolLocation + formattedSchoolMajor + formattedSchoolDate +formattedSchoolDegree;
+		$(".education-entry:last").append(formattedSchoolTitle);
+	}
+}
+
+bundleEducation();
 
 // Work info
 var work = {
@@ -48,7 +98,7 @@ var work = {
 		title : "Supervisor Service Experience Center",
 		location : "Amsterdam",
 		dates : "2014-present",
-		description : ["Supervising a team of 25", "Coaching", "SPOC to stakeholders"]
+		description : ["Supervising a team of 25", " Coaching", " SPOC to stakeholders"]
 
 	},
 	{
@@ -69,8 +119,18 @@ var work = {
 };
 
 // Display work
-$("#workExperience").append(HTMLworkStart);
+function bundleWork() {
+	for (job in work.jobs) {
 
-var workEmployer = work.jobs.employer;
-formattedEmployer = HTMLworkEmployer.replace("%data%", workEmployer);
-$(".work-entry").append(formattedEmployer);
+		$("#workExperience").append(HTMLworkStart);
+		formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+		formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+		formattedDate = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+		formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+		formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+		formattedEmployerTitle = formattedEmployer + formattedTitle + formattedDate + formattedLocation + formattedDescription;
+		$(".work-entry:last").append(formattedEmployerTitle);
+	}
+}
+
+bundleWork();
