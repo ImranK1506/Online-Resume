@@ -17,8 +17,9 @@ h6 {
 }
 
 /* Main - background */
-#main {
+#main, #header {
   background-color: black;
+  /*background: linear-gradient(to right, black , lightgray);*/
 }
 
 /* Contact lining */

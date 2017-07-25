@@ -1,16 +1,16 @@
 // Bio info
 var bio = { 
-	name : "Imran Khan",
-	role : "Front-end Developer",
-	contacts : {
-		phone : "+31637336418",
-		mail : "m_imran_khan@me.com",
-		github : "https://github.com/ImranK1506",
-		location : "Amsterdam, The Netherlands"
+	"name" : "Imran Khan",
+	"role" : "Front-end Developer",
+	"contacts" : {
+		"phone" : "+31637336418",
+		"mail" : "m_imran_khan@me.com",
+		"github" : "https://github.com/ImranK1506",
+		"location" : "Amsterdam, The Netherlands"
 	},
-	welcome : "Welcome, have a look at my resumé!",
-	bioPic : "images/cvpic.png",
-	skills : ["| HTML5 |", "| CSS3 |", "| JavaScript |", "| jQuery |"]
+	"welcome" : "Welcome, have a look at my resumé!",
+	"bioPic" : "images/cvpic.png",
+	"skills" : ["| HTML5 |", "| CSS3 |", "| JavaScript |", "| jQuery |"]
 };
 
 // Display bio
@@ -39,37 +39,36 @@ $("#header").append(formattedBioPic, formattedWelcomeMessage);
 
 // Education info
 var education = {
-	schools : [
-	{
-		school : "Hogeschool INHolland",
-		major : "Communication Science",
-		degree : " ",
-		location : "Diemen",
-		dates : "2007-2009",
-		url : "https://www.inholland.nl/"
-	},
-	{
-		school : "Hogeschool van Amsterdam",
-		major : "Commputer Science",
-		degree : " ",
-		location : "Amsterdam",
-		dates : "2005-2006",
-		url : "http://www.hva.nl/"
-	}
+	"schools": [{
+			"school": "Hogeschool INHolland",
+			"major": "Communication Science",
+			"degree": "BS",
+			"location": "Diemen",
+			"dates": "2007-2009",
+			"url": "https://www.inholland.nl/"
+		},
+		{
+			"school": "Hogeschool van Amsterdam",
+			"major": "Commputer Science",
+			"degree": "BS",
+			"location": "Amsterdam",
+			"dates": "2005-2006",
+			"url": "http://www.hva.nl/"
+		}
 	],
-	courses : [
-	{
-		 title : "Front-End Web Development Nanodegree",
-		 school : "Udacity",
-		 dates : "03/2017-present",
-		 url : "http://www.udacity.com"
-	},
-	{
-		 title : "Web Development 101",
-		 school : "The New York Code and Design Academy",
-		 dates : "04/2016-08/2016",
-		 url : "https://nycda.com/"
-	}]
+	"courses": [{
+			"title": "Front-End Web Development Nanodegree",
+			"school": "Udacity",
+			"dates": "03/2017-present",
+			"url": "http://www.udacity.com"
+		},
+		{
+			"title": "Web Development 101",
+			"school": "The New York Code and Design Academy",
+			"dates": "04/2016-08/2016",
+			"url": "https://nycda.com/"
+		}
+	]
 }
 
 // Display schools
@@ -83,7 +82,7 @@ function bundleEducation() {
 		formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
 		formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
 	
-		formattedSchoolTitle = formattedSchoolName + formattedSchoolLocation + formattedSchoolMajor + formattedSchoolDate +formattedSchoolDegree;
+		formattedSchoolTitle = formattedSchoolName + formattedSchoolLocation + formattedSchoolMajor + formattedSchoolDate + formattedSchoolDegree;
 		$(".education-entry:last").append(formattedSchoolTitle);
 	}
 }
@@ -92,28 +91,28 @@ bundleEducation();
 
 // Work info
 var work = {
-	jobs : [
+	"jobs" : [
 	{
-		employer : "KPN BV.",
-		title : "Supervisor Service Experience Center",
-		location : "Amsterdam",
-		dates : "2014-present",
-		description : ["Supervising a team of 25", " Coaching", " SPOC to stakeholders"]
+		"employer" : "KPN BV.",
+		"title" : "Supervisor Service Experience Center",
+		"location" : "Amsterdam",
+		"dates" : "2014-present",
+		"description" : ["Supervising a team of 25", " Coaching", " SPOC to stakeholders"]
 
 	},
 	{
-		employer : "Telfort",
-		title : "Backoffice, fixed services",
-		location : "Amsterdam",
-		dates : "2011-2014",
-		description : ["Resolving incident and issues concerning fixed services", "Writing and exploiting workinstructions", "Lead escalation during major incidents"]
+		"employer" : "Telfort",
+		"title" : "Backoffice, fixed services",
+		"location" : "Amsterdam",
+		"dates" : "2011-2014",
+		"description" : ["Resolving incident and issues concerning fixed services", "Writing and exploiting workinstructions", "Lead escalation during major incidents"]
 	},
 	{
-		employer : "Telfort",
-		title : "Specialist internet, 2nd line services",
-		location : "Amsterdam",
-		dates : "2009-2011",
-		description : ["Deputy manager of service", "Resolving incident and issues concerning fixed services", "Lead escalation during major incidents"]
+		"employer" : "Telfort",
+		"title" : "Specialist internet, 2nd line services",
+		"location" : "Amsterdam",
+		"dates" : "2009-2011",
+		"description" : ["Deputy manager of service", "Resolving incident and issues concerning fixed services", "Lead escalation during major incidents"]
 	}
 	]
 };
