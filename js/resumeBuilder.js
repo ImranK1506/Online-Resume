@@ -71,7 +71,7 @@ var education = {
 	]
 }
 
-// Display schools
+// Display education
 function bundleEducation() {
 	for (school in education.schools) {
 
@@ -115,7 +115,7 @@ var work = {
 		"description" : ["Deputy manager of service", "Resolving incident and issues concerning fixed services", "Lead escalation during major incidents"]
 	}
 	]
-};
+}
 
 // Display work
 function bundleWork() {
@@ -133,3 +133,31 @@ function bundleWork() {
 }
 
 bundleWork();
+
+// Project info
+var myProject = {
+	"projects" : [
+	{
+		"projectTitle" : "Portfolio",
+		"dates" : 2017,
+		"description" : "My Portfolio",
+		"image" : "images/portfolio-250x332.png"
+	}
+	]
+}
+
+// Display project
+function bundleProject() {
+	for (project in myProject.projects) {
+
+		$("#projects").append(HTMLprojectStart);
+		formattedTitle = HTMLprojectTitle.replace("%data%", myProject.projects[project].projectTitle);
+		formattedDate = HTMLprojectDates.replace("%data%", myProject.projects[project].dates);
+		formattedDescription = HTMLprojectDescription.replace("%data%", myProject.projects[project].description);
+		formattedImage = HTMLprojectImage.replace("%data%", myProject.projects[project].image);
+		formattedProjectTitle = formattedTitle + formattedDate + formattedDescription + formattedImage;
+		$(".project-entry:last").append(formattedProjectTitle);
+	}
+}
+
+bundleProject();

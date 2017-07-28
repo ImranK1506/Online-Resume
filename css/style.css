@@ -41,7 +41,6 @@ h6 {
   padding: 0 3%;
 }
 
-
 h1 {
   font-size: 40px;
   color: #fff;
@@ -135,7 +134,7 @@ a {
 }
 
 /* Work & Education custom */
-.bkgr-work-edu {
+.bkgr-mid {
   background-color: #fff;
   padding: 30px;
   margin: 1% 5% 1% 5%;
